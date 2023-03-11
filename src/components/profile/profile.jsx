@@ -1,32 +1,33 @@
 import PropTypes from 'prop-types';
-import './profile.css';
+import clsx from "clsx";
+import css from './profile.module.css';
 
 export default function Profile({username, tag, location, avatar, stats}) {
   return (
-    <div className="profile">
-      <div className="description">
+    <div className={clsx(css.profile)}>
+      <div className={clsx(css.description)}>
         <img
           src={avatar}
           alt="User avatar"
           width="150"
-          className="avatar"
+          className={clsx(css.avatar)}
         />
-        <p className="name">{username}</p>
-        <p className="tag">@{tag}</p>
-        <p className="location">{location}</p>
+        <p className={clsx(css.name)}>{username}</p>
+        <p className={clsx(css.tag)}>@{tag}</p>
+        <p className={clsx(css.location)}>{location}</p>
       </div>
-      <ul className="stats">
+      <ul className={clsx(css.stats)}>
         <li>
-          <span className="label">Followers</span>
-          <span className="quantity">{stats.followers}</span>
+          <span className={clsx(css.label)}>Followers</span>
+          <span className={clsx(css.quantity)}>{stats.followers}</span>
         </li>
         <li>
-          <span className="label">Views</span>
-          <span className="quantity">{stats.views}</span>
+          <span className={clsx(css.label)}>Views</span>
+          <span className={clsx(css.quantity)}>{stats.views}</span>
         </li>
         <li>
-          <span className="label">Likes</span>
-          <span className="quantity">{stats.likes}</span>
+          <span className={clsx(css.label)}>Likes</span>
+          <span className={clsx(css.quantity)}>{stats.likes}</span>
         </li>
       </ul>
     </div>

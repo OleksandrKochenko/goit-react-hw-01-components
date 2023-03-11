@@ -1,16 +1,13 @@
 import PropTypes from 'prop-types';
-import './friend-list.css';
+import clsx from "clsx";
+import css from './friend-list.module.css';
 
 export default function FriendListItem({ avatar, name, isOnline }) {
-    const spanBulletClasses = ["status"];
-    if (isOnline) {
-        spanBulletClasses.push("online");
-    }
     return (
-        <li className="friend-item">
-            <span className={spanBulletClasses.join(" ")}></span>
-            <img className="avatar" src={avatar} alt="User avatar" width="48" />
-            <p className="name">{name}</p>
+        <li className={clsx(css.friendItem)}>
+            <span className={clsx(css.status, {[css.online]: isOnline})}></span>
+            <img className={clsx(css.avatar)} src={avatar} alt="User avatar" width="48" />
+            <p className={clsx(css.name)}>{name}</p>
         </li>
     )
 };

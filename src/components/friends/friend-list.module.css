@@ -1,10 +1,10 @@
-.friend-list {
+.friendList {
     padding: 0;
     list-style-type: none;
     width: 320px;
     margin: 20px auto;
 }
-.friend-item {
+.friendItem {
     display: flex;
     align-items: center;
     margin: 10px 0;
@@ -24,4 +24,8 @@
 }
 .status.online {
     background-color: green;
+}
+.name {
+    font-size: 20px;
+    font-weight: 700;
 }
